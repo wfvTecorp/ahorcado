@@ -7,17 +7,10 @@ get '/' do
     erb :principal
 end
 
-enable:sessions
-post '/ingresar' do
-	
-	session[:palabra] = params[:palabra]
-	erb :juego_temp
-end
 
 enable :sessions
-get '/juego' do
-	#@palabra = params[:palabra]
-	@palabra = "basura"
+post '/juego' do
+	@palabra = params[:palabra]
 	if @palabra.length == 1
 
 		erb :juego
@@ -34,8 +27,3 @@ end
 
 
 
-#prueba para comprobar la session
-enable :sessions
-get '/vaina' do
-	session[:palabra]
-end
