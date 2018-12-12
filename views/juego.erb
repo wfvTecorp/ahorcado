@@ -12,6 +12,13 @@
 
 
 <% session[:lista].each do |elemento| %>
+<div>
+<form  method='post' action='/juego'>
+Ingresar Letra: <input type='text' name='palabra' max='1' required value="e">
+<input type= "submit" value="Jugar" >
+</form>
+</div>
+
 <div class="letra">
 <%= elemento %>
 </div>
