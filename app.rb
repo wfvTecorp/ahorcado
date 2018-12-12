@@ -12,7 +12,12 @@ enable :sessions
 post '/juego' do
 	@palabra = params[:palabra]
 	if @palabra.length == 1
-
+               for i in(0..session[:longitud])
+                if(session[:palabra][i,1]==@palabra)  
+                session[:lista][i]=@palabra
+                end
+              
+               end
 		erb :juego
 	else
 		session[:palabra] = @palabra.chars
