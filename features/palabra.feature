@@ -7,6 +7,7 @@ Feature: IngresarPalabra
 		Given visito la pagina principal
 		When ingreso "Pepino" en el campo "palabra"
 		 And presiono el boton "Ingresar"
-		Then deberia ver la palabra "Pepino"
+		Then deberia ver la palabra "Que comience el juego"
 
-	
+
+

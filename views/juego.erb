@@ -1,19 +1,22 @@
+<<<<<<< HEAD
 
 <%= session[:palabra] %>
+=======
+Que comience el juego
+<!--<%= session[:palabra] %>-->
+>>>>>>> fbbf4b56e68d6c87df0100d58c73b1c4490a4234
 
-<%=
-session[:longitud]
-%>
+<div> Palabra de <%= session[:longitud] %> caracteres </div>
 
-<%=
-session[:lista]
-%>
+<!--<%= session[:lista] %>-->
+
 
 <% session[:lista].each do |elemento| %>
 <div class="letra">
 <%= elemento %>
 </div>
 <% end %>
+
 
 <style type="text/css">
 .letra{
