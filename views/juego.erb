@@ -1,0 +1,28 @@
+<!--<%= @palabra %>-->
+<%= session[:palabra] %>
+
+<%=
+session[:longitud]
+%>
+
+<%=
+session[:lista]
+%>
+
+<% session[:lista].each do |elemento| %>
+<div class="letra">
+<%= elemento %>
+</div>
+<% end %>
+
+<style type="text/css">
+.letra{
+	display:inline-block;
+	width: 100px;
+	border: dotted 1px #CCC;
+	font-size: 35px;
+	background: #ACC;
+	text-align: center;
+	font-family: Arial;
+}
+</style>
