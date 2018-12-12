@@ -14,3 +14,5 @@ Then(/^deberia ver la palabra "(.*?)"$/) do |palabra|
   last_response.body.should =~ /#{palabra}/m
 end
 
+
+
