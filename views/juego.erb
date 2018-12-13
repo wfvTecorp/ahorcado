@@ -27,9 +27,7 @@
 			<td><%= session[:faltantes] %></td>	
 		</tr>
 	</table>
-</div>
-
-<div id="datos">
+	<hr/>
 	<table>
 		<tr>
 			<td>
@@ -39,14 +37,13 @@
 					<% if session[:isPista] == "0" %>
 						<input type= "submit" value="Obtener Pista" >
 					<% else %>					
-						<label><%=session[:pista] %></label>
+						<label>Pista: <%=session[:pista] %></label>
 					<% end %>
 				</form>
 			</td>
 		</tr>
 	</table>
 </div>
-
 
 </div>
 
@@ -139,6 +136,7 @@
 	border-bottom: dotted 1px #CCC;
 	border-top: dotted 1px #CCC;
 }
+
 #ingresarletra{
 	margin: 20px 0;
 	border: dotted 1px #CCC;
