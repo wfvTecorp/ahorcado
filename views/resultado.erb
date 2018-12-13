@@ -5,10 +5,14 @@ if session[:errores] == 0
 <div id="contenedor">
 
 
-<h1>Perdiste</h1> La palabra era: <%= session[:palabraCompleta]%>
+<h1>Perdiste</h1> 
 
-<div id="imagenahorcado"  style="width:50%">
-	<img style="width:50%" src="http://localhost:4567/ahorcado/ahorcado_0.png" />
+<p>
+La palabra era: <span><%= session[:palabraCompleta]%></span>
+</p>
+
+<div id="imagenahorcado">
+	<img style="width:300px" src="http://localhost:4567/ahorcado/ahorcado_0.png" />
 </div>
 
 
@@ -16,9 +20,14 @@ if session[:errores] == 0
 else
 %>
 
-<h1>Ganaste!!</h1> La palabra era: <%= session[:palabraCompleta]%>
-<div  style="width:60%">
-<img src="https://media1.tenor.com/images/a86e50170babf8636db907879a570408/tenor.gif?itemid=12379000" style="width:60%" />
+<h1>Ganaste!!</h1> 
+
+<p>
+La palabra era: <span><%= session[:palabraCompleta]%></span>
+</p>
+
+<div id="imagenahorcado">
+	<img style="width:300px" src="https://media1.tenor.com/images/a86e50170babf8636db907879a570408/tenor.gif?itemid=12379000" />
 </div>
 
 
@@ -45,9 +54,19 @@ h1{
 #contenedor{
 	width: 90%;
 	margin: 10px auto;
+	text-align: center;
 }
 #imagenahorcado{
 	text-align: center;
+	margin: 20px 0;
+	border: solid 1px #CCC;
 }
 
+p{
+	text-align:center;
+	font-size: 25px;
+}
+p span{
+	color: #DD4626;
+}
 </style>
