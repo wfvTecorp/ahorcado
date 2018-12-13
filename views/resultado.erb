@@ -7,12 +7,18 @@ if session[:errores] == 0
 <div id="imagenahorcado"  style="width:50%">
 	<img style="width:50%" src="http://localhost:4567/ahorcado/ahorcado_0.png" />
 </div>
+
 La palabra era: <%= session[:palabraCompleta]%>
 <%
 else
 %>
 
-<h1>Ganaste!!</h1>
+<h1>Ganaste!!</h1> La palabra era: <%= session[:palabraCompleta]%>
+<div  style="width:50%">
+<img src="https://media1.tenor.com/images/a86e50170babf8636db907879a570408/tenor.gif?itemid=12379000" style="width:50%" />
+</div>
+
+
 
 <%
 end
