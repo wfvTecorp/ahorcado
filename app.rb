@@ -40,6 +40,7 @@ post '/juego' do
 
 	else
 	#aqui ingreso la palabra inicial
+		session[:pista] = params[:pista]
 		session[:palabraCompleta]=@palabra
 		session[:palabra] = @palabra.chars
 		session[:longitud] = @palabra.length
