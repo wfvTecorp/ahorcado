@@ -34,6 +34,24 @@
 	</table>
 </div>
 
+<div id="datos">
+	<table>
+		<tr>
+			<td>
+				<form  method='post' action='/juego'>
+					<input type='hidden' name='isPista' id='isPista' value='1' />
+					<input type='hidden' name='palabra' id='isPista' value='<%=@palabra%>' />
+					<% if session[:isPista] == "0" %>
+						<input type= "submit" value="Obtener Pista" >
+					<% else %>					
+						<label><%=session[:pista] %></label>
+					<% end %>
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+
 
 </div>
 

@@ -10,6 +10,14 @@ end
 
 enable :sessions
 post '/juego' do
+
+	@isPista = params[:isPista]
+	if @isPista == "1"		
+		session[:isPista] = @isPista
+		session[:errores] -= 1
+		return erb :juego
+	end
+	
 	@palabra = params[:palabra]
 	@palabra = @palabra.upcase
 	#cuando ingresa la palabra
@@ -45,6 +53,7 @@ post '/juego' do
 		session[:palabra] = @palabra.chars
 		session[:longitud] = @palabra.length
 		session[:lista] = []
+		session[:isPista] = "0"
 		session[:palabra].each do |elemento|
 			session[:lista].push("_")
 		end
