@@ -15,7 +15,11 @@ post '/juego' do
 	if @isPista == "1"		
 		session[:isPista] = @isPista
 		session[:errores] -= 1
-		return erb :juego
+		if session[:errores] == 0 or session[:faltantes] == 0
+			return erb :resultado
+		else
+			return erb :juego
+		end
 	end
 	
 	@palabra = params[:palabra]
