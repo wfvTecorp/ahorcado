@@ -1,3 +1,4 @@
+=begin
 Given /^I open the web app$/ do
   visit '/'
 end
@@ -36,3 +37,4 @@ Then(/^I should see "(.*?)" at the cell (\d+), (\d+)$/) do |text, x, y|
     td.should contain( text )
   end
 end
+=end
