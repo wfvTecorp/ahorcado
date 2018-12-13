@@ -40,6 +40,7 @@ post '/juego' do
 
 	else
 	#aqui ingreso la palabra inicial
+		session[:palabraCompleta]=@palabra
 		session[:palabra] = @palabra.chars
 		session[:longitud] = @palabra.length
 		session[:lista] = []
