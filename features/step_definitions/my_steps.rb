@@ -13,4 +13,8 @@ end
 Then(/^deberia ver la palabra "(.*?)"$/) do |palabra|
   last_response.body.should =~ /#{palabra}/m
 end
+#When /^I click on "(.*)"$/ do |text|
+When /^presiono el link "(.*)"$/ do |text|
+  click_link(text)
+end
 
