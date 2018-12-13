@@ -2,6 +2,9 @@
 if session[:errores] == 0
 %>
 
+<div id="contenedor">
+
+
 <h1>Perdiste</h1> La palabra era: <%= session[:palabraCompleta]%>
 
 <div id="imagenahorcado"  style="width:50%">
@@ -24,4 +27,27 @@ else
 end
 %>
 
-<a href="http://localhost:4567/" title="Reiniciar" id="Reiniciar">Reiniciar</a>
+<a href="http://localhost:4567/" title="Reiniciar" id="Reiniciar" style="text-decoration: none;color: red;text-align: right;font-size: 25px;">Reiniciar</a>
+
+
+</div>
+
+
+
+<style type="text/css">
+*{
+	font-family: Arial;
+}
+h1{
+	text-align: center;
+	margin: 20px 0 30px;
+}
+#contenedor{
+	width: 90%;
+	margin: 10px auto;
+}
+#imagenahorcado{
+	text-align: center;
+}
+
+</style>
