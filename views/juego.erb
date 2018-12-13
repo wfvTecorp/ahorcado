@@ -10,8 +10,8 @@
 
 <div>
 <form  method='post' action='/juego'>
-Ingresar Letra: <input type='text' name='palabra' max='1' required value="e">
-<input type= "submit" value="Jugar" >
+Ingresar Letra: <input type='text' name='palabra' id='palabra' max='1' required >
+<input type= "submit" value="Jugar" name='Jugar' id='Jugar' >
 </form>
 </div>
 <% session[:lista].each do |elemento| %>
