@@ -1,26 +1,106 @@
 
-<h1>Que comience el juego</h1>
-<img src="http://contenidos.enter.co/custom/uploads/2017/10/jigsaw.jpg" style="width: 200px; height: 150px;" />
+<div id="contenedor">
 
-<br />
-
-
-<div> Palabra de <%= session[:longitud] %> caracteres </div>
-
-
-<div>
-<form  method='post' action='/juego'>
-Ingresar Letra: <input type='text' name='palabra' id='palabra' max='1' required >
-<input type= "submit" value="Jugar" name='Jugar' id='Jugar' >
-</form>
+<div style="text-align:center;"> 
+	<!--<table>
+		<tr>
+		<td><img src="http://contenidos.enter.co/custom/uploads/2017/10/jigsaw.jpg" style="width: 100px; height: 75px;" /></td>
+		<td><h1 style="text-align: center;">Que comience el juego</h1></td>
+		</tr>
+	</table>-->
+<img src="http://contenidos.enter.co/custom/uploads/2017/10/jigsaw.jpg" style="width: 75px; height: 47px;" />
+<h1 style="text-align: center; display: inline; font-size: 55px; margin:0; padding:0;">Que comience el juego</h1>
 </div>
-<% session[:lista].each do |elemento| %>
-<div class='letra'><%= elemento %></div>
 
-<% end %>
+
+
+<div id="ahorcado">
+
+<div id="imagenahorcado">
+	<img src="http://localhost:4567/ahorcado/ahorcado_<%= session[:errores] %>.png" />
+</div>
+
+
+<div id="datos">
+	<table>
+		<tr>
+			<td>Cantidad Errores Faltantes:</td>
+			<td><%= session[:errores] %></td>	
+		</tr>
+		<tr>
+			<td>Cantidad Letras Faltantes:</td>
+			<td><%= session[:faltantes] %></td>	
+		</tr>
+	</table>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="ingresarletra">
+	<h2> Palabra de <%= session[:longitud] %> caracteres </h2>
+
+	<form  method='post' action='/juego'>
+		Ingresar Letra: <input type='text' name='palabra' id="campoletra" maxlength='1' required value="" autocomplete="off" />
+		<input type= "submit" value="Jugar" >
+	</form>
+
+	<div id="cajaletras">
+		<% session[:lista].each do |elemento| %>
+			<div class='letra'><%= elemento %></div>
+		<% end %>
+	<div>
+
+</div>
+
+</div>
+
+
+
 
 
 <style type="text/css">
+*{
+	font-family: Arial;
+}
+
+#contenedor{
+	width: 90%;
+	margin: 10px auto;
+}
+
+
+
+#ahorcado{
+	margin: 20px 0;
+	border: dotted 1px #CCC;
+}
+
+#ahorcado > div{
+	width: 48%;
+	display: inline-block;
+	border: solid 1px #000;
+	margin: 10px;
+}
+
+#ahorcado #imagenahorcado{
+	text-align: center;
+}
+
+#ahorcado #imagenahorcado img{
+    width: 215px;
+    height: 175px;
+}
+
+
 .letra{
 	display:inline-block;
 	width: 100px;
@@ -30,20 +110,35 @@ Ingresar Letra: <input type='text' name='palabra' id='palabra' max='1' required 
 	text-align: center;
 	font-family: Arial;
 }
+
+#campoletra{
+	text-transform: uppercase;
+}
+#datos{
+	background: #AACCFF;
+	border: dotted 1px #444
+	width: 300px;
+	margin: 20px 0 0;
+	vertical-align: top;
+}
+
+#datos table tr td{
+	border-bottom: dotted 1px #CCC;
+	border-top: dotted 1px #CCC;
+}
+#ingresarletra{
+	margin: 20px 0;
+	border: dotted 1px #CCC;
+}
+#ingresarletra form{
+	text-align: center;
+}
+#ingresarletra #cajaletras{
+	margin: 10px 0;
+	text-align: center;
+}
+
 </style>
 
-<table>
-	<tr>
-		<td>Cantidad Oportunidades</td>
-		<td>6</td>	
 
-	</tr>
-	<tr>
-		<td>Cantidad Errores</td>
-		<td>0</td>	
-	</tr>
-	<tr>
-		<td>Cantidad Letras Faltantes</td>
-		<td>0</td>	
-	</tr>
-</table>
+
